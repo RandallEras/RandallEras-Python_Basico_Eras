@@ -1,5 +1,5 @@
 # Blackjack
-# From 1 to 7 players compete against a dealer
+# From 1 to 2 players compete against a dealer
 
 import cards, games     
 
@@ -43,6 +43,7 @@ class BJ_Hand(cards.Hand):
         for card in self.cards:
             if not card.value:
                 return None
+        
         # add up card values, treat each Ace as 1
         t = 0
         for card in self.cards:
@@ -52,12 +53,15 @@ class BJ_Hand(cards.Hand):
         contains_ace = False
         for card in self.cards:
             if card.value == BJ_Card.ACE_VALUE:
-                contains_ace = True    
+                contains_ace = True
+                
         # if hand contains Ace and total is low enough, treat Ace as 11
         if contains_ace and t <= 11:
             # add only 10 since we've already added 1 for the Ace
             t += 10   
+                
         return t
+
     def is_busted(self):
         return self.total > 21
 
@@ -170,7 +174,7 @@ def main():
     print("\t\tWelcome to Blackjack!\n")
     
     names = []
-    number = games.ask_number("How many players? (1 - 2): ", low = 1, high = 3)
+    number = games.ask_number("How many players? (1 - 2): ", low = 1, high = 2)
     for i in range(number):
         name = input("Enter player name: ")
         names.append(name)

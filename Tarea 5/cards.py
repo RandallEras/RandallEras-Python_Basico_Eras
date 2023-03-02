@@ -1,5 +1,4 @@
 # Cards Module
-# Basic classes for a game with playing cards
 
 class Card(object):
     """ A playing card. """
@@ -71,3 +70,4 @@ class Deck(Hand):
 if __name__ == "__main__":
     print("This is a module with classes for playing cards.")
     input("\n\nPress the enter key to exit.")
+

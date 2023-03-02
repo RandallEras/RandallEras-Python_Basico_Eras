@@ -1,5 +1,5 @@
 # Games
-# Demonstrates module creation
+# Module
 
 class Player(object):
     """ A player for a game. """
@@ -29,4 +29,3 @@ def ask_number(question, low, high):
 if __name__ == "__main__":
     print("You ran this module directly (and did not 'import' it).")
     input("\n\nPress the enter key to exit.")
-
